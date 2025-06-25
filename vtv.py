@@ -10,7 +10,7 @@ from elevenlabs import VoiceSettings
 from elevenlabs.client import ElevenLabs
 
 def transcribe_audio(audio_file):
-    aai.settings.api_key = "afaada0aac9a4022acc94487ee9770b3"
+    aai.settings.api_key = "API Key "                  // add assemblyai API key
     transcriber = aai.Transcriber()
     transcript = transcriber.transcribe(audio_file)
     return transcript
@@ -27,9 +27,9 @@ def translate_text(text: str) -> list:
     return list_translations
 
 def text_to_speech(text: str) -> str:
-    client = ElevenLabs(api_key="sk_a8dc67cdb5c0e40521cca63ddb567109e4a157991f5533af")
+    client = ElevenLabs(api_key="API key")                                         //add ElevenLads API key
     response = client.text_to_speech.convert(
-        voice_id="XjLkpWUlnhS8i7gGz3lZ",
+        # voice_id="VOice ID API key",                                            // add voice id for ElevenLAbs
         text=text,
         model_id="eleven_multilingual_v2",
         voice_settings=VoiceSettings(stability=0.5, similarity_boost=0.8),
